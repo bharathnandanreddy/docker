@@ -9,8 +9,8 @@ ip_address = socket.gethostbyname(hostname)
 
 
 def readfile(file):
-    with open(file, 'r') as f:
-        text = f.read()
+    with open(file, 'rb') as f:
+        text = f.read().decode('utf-8')
         words = text.split()
         return words
 
@@ -51,5 +51,5 @@ with open('/home/output/result.txt', 'w') as file:
     file.write(f'\nIP address: {ip_address}')
 
 # displaying the result file
-with open('/home/output/result.txt', 'r') as file:
-    print(file.read())
+with open('/home/output/result.txt', 'rb') as file:
+    print(file.read().decode('utf-8'))
